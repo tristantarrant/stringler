@@ -1,0 +1,431 @@
+{
+  "$comment": "Source of truth for the Stringler presets. Edit this file and run 'make presets' to regenerate plugins/Stringler/Presets.hpp (DPF programs, exported to LV2 presets.ttl and to VST3/CLAP). The parameter order below must match the Parameters enum in DistrhoPluginInfo.h (mode, bend, steal, gate, legato, legatoms, vibdepth, vibrate, chordshift, chordwheel, transpose, scale, root, octdown, split, lowschan, highschan, brightamt, brightcc, loudamt, loudcc, velnorm, outchan); program 0 must equal 'defaults'. The parameter RANGES and DEFAULTS were recovered from the shipped binary of the original commercial guitar-MIDI plugin (see README 'Research'); the PRESET VALUES are house designs - the original's factory .patch presets are binary/protected and unreadable, so no published Stringler settings exist to copy.",
+  "parameters": [
+    "mode",
+    "bend",
+    "steal",
+    "gate",
+    "legato",
+    "legatoms",
+    "vibdepth",
+    "vibrate",
+    "chordshift",
+    "chordwheel",
+    "transpose",
+    "scale",
+    "root",
+    "octdown",
+    "split",
+    "lowschan",
+    "highschan",
+    "brightamt",
+    "brightcc",
+    "loudamt",
+    "loudcc",
+    "velnorm",
+    "outchan",
+    "source",
+    "tracklow",
+    "trackres",
+    "trackbright",
+    "trackjitter",
+    "bendtrig"
+  ],
+  "ranges": {
+    "mode": [
+      0.0,
+      1.0
+    ],
+    "bend": [
+      0.0,
+      48.0
+    ],
+    "steal": [
+      0.0,
+      12.0
+    ],
+    "gate": [
+      0.0,
+      1.0
+    ],
+    "legato": [
+      0.0,
+      1.0
+    ],
+    "legatoms": [
+      0.0,
+      100.0
+    ],
+    "vibdepth": [
+      0.0,
+      200.0
+    ],
+    "vibrate": [
+      0.0,
+      10.0
+    ],
+    "chordshift": [
+      -12.0,
+      12.0
+    ],
+    "chordwheel": [
+      0.0,
+      3.0
+    ],
+    "transpose": [
+      -24.0,
+      24.0
+    ],
+    "scale": [
+      0.0,
+      17.0
+    ],
+    "root": [
+      0.0,
+      11.0
+    ],
+    "octdown": [
+      0.0,
+      2.0
+    ],
+    "split": [
+      0.0,
+      64.0
+    ],
+    "lowschan": [
+      1.0,
+      16.0
+    ],
+    "highschan": [
+      1.0,
+      16.0
+    ],
+    "brightamt": [
+      0.0,
+      2.0
+    ],
+    "brightcc": [
+      0.0,
+      127.0
+    ],
+    "loudamt": [
+      0.0,
+      2.0
+    ],
+    "loudcc": [
+      0.0,
+      127.0
+    ],
+    "velnorm": [
+      0.0,
+      127.0
+    ],
+    "outchan": [
+      1.0,
+      16.0
+    ],
+    "source": [
+      0.0,
+      2.0
+    ],
+    "tracklow": [
+      33.0,
+      60.0
+    ],
+    "trackres": [
+      0.0,
+      3.0
+    ],
+    "trackbright": [
+      0.0,
+      4.0
+    ],
+    "trackjitter": [
+      0.0,
+      3.0
+    ],
+    "bendtrig": [
+      0.0,
+      100.0
+    ]
+  },
+  "integers": [
+    "mode",
+    "bend",
+    "steal",
+    "legato",
+    "chordshift",
+    "chordwheel",
+    "transpose",
+    "scale",
+    "root",
+    "split",
+    "lowschan",
+    "highschan",
+    "brightcc",
+    "loudcc",
+    "velnorm",
+    "outchan",
+    "source",
+    "tracklow",
+    "trackres",
+    "trackbright",
+    "trackjitter",
+    "bendtrig"
+  ],
+  "defaults": {
+    "mode": 0,
+    "bend": 12,
+    "steal": 1,
+    "gate": 0.1,
+    "legato": 1,
+    "legatoms": 30,
+    "vibdepth": 0,
+    "vibrate": 5,
+    "chordshift": 0,
+    "chordwheel": 0,
+    "transpose": 0,
+    "scale": 0,
+    "root": 0,
+    "octdown": 1.0,
+    "split": 50,
+    "lowschan": 1,
+    "highschan": 1,
+    "brightamt": 0.0,
+    "brightcc": 1,
+    "loudamt": 0.0,
+    "loudcc": 7,
+    "velnorm": 0,
+    "outchan": 1,
+    "source": 2,
+    "tracklow": 40,
+    "trackres": 0,
+    "trackbright": 2,
+    "trackjitter": 0,
+    "bendtrig": 50
+  },
+  "presets": [
+    {
+      "name": "Open Strings",
+      "values": {
+        "mode": 0,
+        "bend": 12,
+        "steal": 1,
+        "gate": 0.1,
+        "legato": 1,
+        "legatoms": 30,
+        "vibdepth": 0,
+        "vibrate": 5,
+        "chordshift": 0,
+        "chordwheel": 0,
+        "transpose": 0,
+        "scale": 0,
+        "root": 0,
+        "octdown": 1.0,
+        "split": 50,
+        "lowschan": 1,
+        "highschan": 1,
+        "brightamt": 0.0,
+        "brightcc": 1,
+        "loudamt": 0.0,
+        "loudcc": 7,
+        "velnorm": 0,
+        "outchan": 1,
+        "source": 2,
+        "tracklow": 40,
+        "trackres": 0,
+        "trackbright": 2,
+        "trackjitter": 0,
+        "bendtrig": 50
+      },
+      "artist": "",
+      "songs": [],
+      "source": "house default: monophonic tracking with modest glides"
+    },
+    {
+      "name": "Singing Line",
+      "values": {
+        "mode": 0,
+        "bend": 12,
+        "steal": 2,
+        "gate": 0.1,
+        "legato": 1,
+        "legatoms": 40,
+        "vibdepth": 30,
+        "vibrate": 5,
+        "chordshift": 0,
+        "chordwheel": 0,
+        "transpose": 0,
+        "scale": 0,
+        "root": 0,
+        "octdown": 0.0,
+        "split": 50,
+        "lowschan": 1,
+        "highschan": 1,
+        "brightamt": 0.0,
+        "brightcc": 1,
+        "loudamt": 1.0,
+        "loudcc": 7,
+        "velnorm": 0,
+        "outchan": 1,
+        "source": 2,
+        "tracklow": 40,
+        "trackres": 0,
+        "trackbright": 2,
+        "trackjitter": 0,
+        "bendtrig": 50
+      },
+      "artist": "",
+      "songs": [],
+      "source": "house design: singing legato lead line with gentle vibrato"
+    },
+    {
+      "name": "Chord Cycle",
+      "values": {
+        "mode": 1,
+        "bend": 6,
+        "steal": 3,
+        "gate": 0.1,
+        "legato": 1,
+        "legatoms": 20,
+        "vibdepth": 0,
+        "vibrate": 5,
+        "chordshift": 0,
+        "chordwheel": 1,
+        "transpose": 0,
+        "scale": 0,
+        "root": 0,
+        "octdown": 0.0,
+        "split": 50,
+        "lowschan": 1,
+        "highschan": 1,
+        "brightamt": 1.0,
+        "brightcc": 1,
+        "loudamt": 1.0,
+        "loudcc": 7,
+        "velnorm": 0,
+        "outchan": 1,
+        "source": 2,
+        "tracklow": 40,
+        "trackres": 0,
+        "trackbright": 2,
+        "trackjitter": 0,
+        "bendtrig": 50
+      },
+      "artist": "",
+      "songs": [],
+      "source": "house design: polyphonic strumming cycling major chords (chord wheel)"
+    },
+    {
+      "name": "Midnight Shades",
+      "values": {
+        "mode": 0,
+        "bend": 12,
+        "steal": 2,
+        "gate": 0.1,
+        "legato": 1,
+        "legatoms": 35,
+        "vibdepth": 40,
+        "vibrate": 4,
+        "chordshift": 0,
+        "chordwheel": 0,
+        "transpose": 0,
+        "scale": 2,
+        "root": 0,
+        "octdown": 0.5,
+        "split": 50,
+        "lowschan": 1,
+        "highschan": 1,
+        "brightamt": 0.5,
+        "brightcc": 1,
+        "loudamt": 1.5,
+        "loudcc": 7,
+        "velnorm": 0,
+        "outchan": 1,
+        "source": 2,
+        "tracklow": 40,
+        "trackres": 0,
+        "trackbright": 2,
+        "trackjitter": 0,
+        "bendtrig": 50
+      },
+      "artist": "",
+      "songs": [],
+      "source": "house design: minor scale filter, expressive vibrato, octave-down on the low strings"
+    },
+    {
+      "name": "Tight Rhythm",
+      "values": {
+        "mode": 1,
+        "bend": 0,
+        "steal": 1,
+        "gate": 0.2,
+        "legato": 0,
+        "legatoms": 30,
+        "vibdepth": 0,
+        "vibrate": 5,
+        "chordshift": 0,
+        "chordwheel": 0,
+        "transpose": 0,
+        "scale": 0,
+        "root": 0,
+        "octdown": 0.0,
+        "split": 50,
+        "lowschan": 1,
+        "highschan": 1,
+        "brightamt": 1.0,
+        "brightcc": 1,
+        "loudamt": 0.0,
+        "loudcc": 7,
+        "velnorm": 80,
+        "outchan": 1,
+        "source": 2,
+        "tracklow": 40,
+        "trackres": 0,
+        "trackbright": 2,
+        "trackjitter": 0,
+        "bendtrig": 50
+      },
+      "artist": "",
+      "songs": [],
+      "source": "house design: tight polyphonic rhythm guitar, no bends, velocity-normalized"
+    },
+    {
+      "name": "Long Glide",
+      "values": {
+        "mode": 0,
+        "bend": 24,
+        "steal": 3,
+        "gate": 0.05,
+        "legato": 1,
+        "legatoms": 80,
+        "vibdepth": 50,
+        "vibrate": 3,
+        "chordshift": 0,
+        "chordwheel": 0,
+        "transpose": 0,
+        "scale": 0,
+        "root": 0,
+        "octdown": 0.5,
+        "split": 50,
+        "lowschan": 1,
+        "highschan": 1,
+        "brightamt": 0.0,
+        "brightcc": 1,
+        "loudamt": 1.0,
+        "loudcc": 7,
+        "velnorm": 0,
+        "outchan": 1,
+        "source": 2,
+        "tracklow": 40,
+        "trackres": 0,
+        "trackbright": 2,
+        "trackjitter": 0,
+        "bendtrig": 50
+      },
+      "artist": "",
+      "songs": [],
+      "source": "house design: long glides and deep slow vibrato"
+    }
+  ]
+}

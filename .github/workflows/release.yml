@@ -1,0 +1,73 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  linux:
+    name: Linux ${{ matrix.target }}
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [linux-x86_64, linux-arm64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: tristantarrant/dpf-makefile-action@v1.2
+        with:
+          target: ${{ matrix.target }}
+          extraargs: HAVE_CAIRO=true
+
+  macos-intel:
+    name: macOS x86_64
+    runs-on: macos-15-intel
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: tristantarrant/dpf-makefile-action@v1.2
+        with:
+          target: macos-intel
+          extraargs: HAVE_CAIRO=true
+
+  macos-arm64:
+    name: macOS arm64
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: tristantarrant/dpf-makefile-action@v1.2
+        with:
+          target: macos-arm64
+          extraargs: HAVE_CAIRO=true
+
+  validate:
+    name: Validate (lv2lint + valgrind)
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: tristantarrant/dpf-makefile-action@v1.2
+        with:
+          target: pluginval
+          extraargs: HAVE_CAIRO=true
+
+  source:
+    name: Source archive
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: tristantarrant/dpf-makefile-action@v1.2
+        with:
+          target: source
