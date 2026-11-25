@@ -11,10 +11,6 @@ filtering, velocity-driven brightness/loudness CCs, an octave-down
 companion and lows/highs channel splitting — as an LV2 (with a modgui),
 VST3 and CLAP plugin and a standalone JACK app, with a scalable GUI.
 
-Stringler is a functional recreation of the core of a commercial
-guitar-MIDI plugin (the product name is deliberately omitted), built with
-[DPF](https://github.com/DISTRHO/DPF) after reverse engineering its shipped
-Windows VST3 with REA (a reverse-engineering MCP tool driving Ghidra).
 Plug a guitar into the audio input and it tracks it (monophonic, classical
 DSP — see [The tracker](#the-tracker)); it also accepts MIDI directly, and
 either source can feed the expression engine. The original's neural
