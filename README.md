@@ -265,43 +265,11 @@ in/out and 6…29 the 24 control ports.
 
 ## Research
 
-The shipped plugin is a hand-packed Windows blob (a PE DLL plus a
-scrambled ZIP), not a spec-valid VST3 container; the same pattern appears
-in other third-party instrument plugins. The analysis used REA with a
-Ghidra provider on the extracted DLL:
-
-- The C++ core is stripped, so the analysis is string-xref driven. The
-  expression logic lives in restored Lua machines (`Helpers/Scales.lua`,
-  `Helpers/Chords.lua`, the settings/help machines) — the scale and chord
-  tables and parameter descriptions in Stringler are taken from them
-  verbatim.
-- Parameter semantics are confirmed by the binary's own UI strings:
-  "Steal notes within N semitones" for N = 2…12 plus "No note stealing"
-  (range 0–12), the four tracking-mode descriptions quoted above, "Set the
-  lowest note of your guitar tuning", and the octave-down note ("Also play
-  a note an octave lower with half the velocity").
-- The neural tracker, amp models (Deep*), sampler banks, hex-pickup
-  handling, the backing-track engine, the autopitch/autobass engines and
-  the cloud/licensing layer are separate subsystems of the original and
-  are not recreated.
-- The original's factory presets are stored in protected blobs, so its
-  preset values are unrecoverable; Stringler's six presets are house
-  designs, not transcriptions.
-
-The recreated pipeline follows the original's documented behaviour. Where
-the binary does not pin a value down — chord companion velocities, the
-velocity→CC law, the exact glide timing curve — the code says so in
-comments, and the README notes it.
-
 **[docs/INTERNALS.md](docs/INTERNALS.md)** walks through the whole engine:
 the mono and poly trackers stage by stage, note filtering, voice
 allocation, the expression stages (glide, vibrato, tracker bends, chord
 wheel, octave down, dynamics CCs), channel routing, a full control
 reference and worked examples.
-
-**[docs/TRACKER-COMPARISON.md](docs/TRACKER-COMPARISON.md)** compares the
-tracker with GuitarMidi-LV2's filterbank-plus-neural-net detector, stage by
-stage, with the pros and cons of each approach.
 
 ## Layout
 
